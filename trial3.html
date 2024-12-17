@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bala Kanda Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://shorturl.at/jblx5');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            color: black;
+        }
+        .quiz-container {
+            max-width: 800px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.85);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .options {
+            list-style: none;
+            padding: 0;
+        }
+        .options li {
+            margin: 10px 0;
+        }
+        .option-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: left;
+            transition: background-color 0.3s;
+        }
+        .option-button:hover {
+            background-color: #e0e0e0;
+        }
+        .correct {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .incorrect {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        .disabled {
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Bala Kanda Quiz</h1>
+
+        <div class="question">
+            <p><strong>1. What were the names of Dasharatha's wives?</strong></p>
+            <ul class="options">
+                <li><button class="option-button" onclick="checkAnswer(this, false, 1)">a) Mandavi, Shrutakirti, and Kaikeyi</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, true, 1)">b) Kausalya, Sumitra, and Kaikeyi</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 1)">c) Sita, Urmila, and Shrutakirti</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 1)">d) Kausalya, Mandavi, and Shrutakirti</button></li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <p><strong>2. What was the name of the demoness who tried to kill Rama and Lakshmana when they were young?</strong></p>
+            <ul class="options">
+                <li><button class="option-button" onclick="checkAnswer(this, false, 2)">a) Shurpanakha</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, true, 2)">b) Tataka</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 2)">c) Surasa</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 2)">d) Mahishasura</button></li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <p><strong>3. Which sage took Rama and Lakshmana to protect his yagna?</strong></p>
+            <ul class="options">
+                <li><button class="option-button" onclick="checkAnswer(this, true, 3)">a) Vishwamitra</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 3)">b) Vashishta</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 3)">c) Narada</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 3)">d) Agastya</button></li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <p><strong>4. What did Vishwamitra aim to achieve by penance?</strong></p>
+            <ul class="options">
+                <li><button class="option-button" onclick="checkAnswer(this, false, 4)">a) Title of Maharishi</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, true, 4)">b) Title of Brahmarishi</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 4)">c) Power to defeat Ravana</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 4)">d) Knowledge of divine weapons</button></li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <p><strong>5. Why did Parashurama challenge Rama after the Sita Swayamvara?</strong></p>
+            <ul class="options">
+                <li><button class="option-button" onclick="checkAnswer(this, false, 5)">a) To test his valor</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, true, 5)">b) To avenge breaking Shiva’s bow</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 5)">c) To claim Sita as his bride</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 5)">d) To punish Janaka for the contest</button></li>
+            </ul>
+        </div>
+
+        <h2>Situation-Based Questions</h2>
+
+        <div class="question">
+            <p><strong>1. You’ve been betrayed by someone you trusted, just like Rama was when he was deceived by Maricha’s illusion. How would you deal with this feeling of betrayal?</strong></p>
+            <ul class="options">
+                <li><button class="option-button" onclick="checkAnswer(this, false, 6)">a) Confront the person and demand an explanation</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 6)">b) Cut ties with them completely without discussing it</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, true, 6)">c) Talk through the issue and try to understand their side</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 6)">d) Seek revenge to get even</button></li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <p><strong>2. You’re given a difficult task by your parent or mentor, similar to Rama being sent into exile by King Dasharatha. What would you do?</strong></p>
+            <ul class="options">
+                <li><button class="option-button" onclick="checkAnswer(this, false, 7)">a) Argue against it and refuse to comply</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, true, 7)">b) Accept the task, understanding its importance</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 7)">c) Ignore the task and wait for it to be cancelled</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 7)">d) Complain about it but still do it reluctantly</button></li>
+            </ul>
+        </div>
+
+	<div class="question">
+            <p><strong>3. Your best friend gets all the attention, and you're feeling left out, much like why Kaikeyi manipulated Dasharatha's love for Rama. How would you handle this?</strong></p>
+            <ul class="options">
+                <li><button class="option-button" onclick="checkAnswer(this, false, 8)">a) Feel jealous and distant yourself</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 8)">b) Seek attention from others to feel important</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, true, 8)">c) Talk to your friend about how you feel and work things out</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 8)">d) Stop being friends altogether</button></li>
+            </ul>
+        </div>
+
+
+	<div class="question">
+            <p><strong>4. You’ve just witnessed someone do something extraordinary, like how Vishwamitra was amazed by Rama’s prowess. What would you do after observing their success?</strong></p>
+            <ul class="options">
+                <li><button class="option-button" onclick="checkAnswer(this, false, 9)">a)  Feel inferior and avoid interacting with them</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 9)">b) Ignore their achievement and focus only on your own goals</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 9)">c) Try to one-up them by showing off your own skills</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, true, 9)">d) Celebrate their achievement and learn from them</button></li>
+            </ul>
+        </div>
+
+	<div class="question">
+            <p><strong>5. A family member asks you to make a significant sacrifice for the well-being of the family, similar to Rama’s exile. What would you do?</strong></p>
+            <ul class="options">
+                <li><button class="option-button" onclick="checkAnswer(this, false, 10)">a)   Refuse and prioritize your own needs</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, true, 10)">b) Agree to the sacrifice, trusting it’s for the greater good</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 10)">c)  Ignore the request and let someone else handle it</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 10)">d) Complain about the sacrifice but still agree to it</button></li>
+            </ul>
+        </div>
+
+	<div class="question">
+    <div style="text-align: center; margin-bottom: 20px;">
+        <img src="https://sastracaksu.nlitn.in/wp-content/uploads/2018/03/rama-breaks-bow.jpg" alt="Rama breaks Shiva's bow" style="max-width: 80%; height: auto; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+    </div>
+    <p><strong>6. What is happening in this scene?</strong></p>
+    <ul class="options">
+        <li><button class="option-button" onclick="checkAnswer(this, false, 11)">a) Rama is defeating a demon with Shiva’s bow</button></li>
+        <li><button class="option-button" onclick="checkAnswer(this, true, 11)">b) Rama is breaking Shiva's bow to win Sita's hand in marriage</button></li>
+        <li><button class="option-button" onclick="checkAnswer(this, false, 11)">c) Rama and Lakshmana are preparing for battle</button></li>
+        <li><button class="option-button" onclick="checkAnswer(this, false, 11)">d) Sita is presenting the bow to Rama for blessings</button></li>
+    </ul>
+</div>
+
+
+    </div>
+
+    <script>
+        function checkAnswer(button, isCorrect, questionNumber) {
+            const buttons = document.querySelectorAll(`.question:nth-of-type(${questionNumber}) .option-button`);
+            buttons.forEach(btn => btn.classList.add('disabled'));
+
+            if (isCorrect) {
+                button.classList.add('correct');
+            } else {
+                button.classList.add('incorrect');
+                const correctButton = Array.from(buttons).find(btn => btn.getAttribute('onclick').includes('true'));
+                if (correctButton) correctButton.classList.add('correct');
+            }
+        }
+    </script>
+</body>
+</html>
