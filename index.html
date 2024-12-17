@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramayana Explorer</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Apply serif font */
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://cdn-public.mappls.com/about-mappls/assets/store/images/store/Print-Maps/38_5X_28_Hindi.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+
+        /* Header styling */
+        header {
+            margin-top: 50px;
+            text-align: center;
+            color: white;
+        }
+
+        /* Increase spacing and size for the intro section */
+        .intro {
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .intro h2 {
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        .intro p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        /* Styling for the start tour button */
+        .start-tour {
+            font-size: 30px;
+            padding: 25px 50px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 30px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Styling for the icon circle */
+        .circle {
+            width: 15vw; /* 15% of the screen width */
+            height: 15vw; /* 15% of the screen width */
+            border-radius: 50%;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 10px;
+        }
+
+        .circle img {
+            width: 70%;
+            height: 70%;
+            object-fit: cover;
+        }
+
+        /* Flexbox styling for the icon container */
+        .icon-container {
+            text-align: center;
+            margin: 10px;
+            display: inline-block;
+        }
+
+        /* Styling for the dropdown */
+        select {
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            background-color: #f4f4f4;
+            font-size: 16px;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        /* Footer styling */
+        x {
+            background-color: transparent;
+            font-size: 14px;
+            padding: 10px;
+            text-align: center;
+            color: white;
+        }
+
+        /* Add some space to the buttons container */
+        .buttons-container {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+footer {
+    background-color: #f9f9f9;
+    font-size: 12px;
+    padding: 10px;
+    text-align: center;
+    color: #333;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Ensure space between the dropdown and footer */
+body {
+    margin-bottom: 60px; /* Add margin at the bottom so the footer doesn't overlap content */
+}
+
+/* Style for the quiz dropdown */
+.quiz-dropdown-container {
+    margin-top: 30px;
+    text-align: center;
+    width: 100%;
+}
+
+.quiz-dropdown-container select {
+    padding: 10px;
+    width: 80%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Layout for the icon row */
+.icon-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+width: 80%
+}
+
+/* Style for the icon container */
+..icon-container {
+    flex: 0 0 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.icon-container img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.icon-label {
+    margin-top: 15px; /* Adds space between the circle and the label */
+    font-size: 24px; /* Make the text larger */
+    font-weight: bold;
+    color: dark green; /* White text */
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Shadow for visibility */
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>The Ramayana Explorer</h1>
+    </header>
+    <main>
+        <section class="intro">
+            <h2>Mapping the Timeless Journey of Dharma</h2>
+            <p><em>Dive into the epic tale</em> of heroism, devotion, and the enduring saga  of <strong>Lord Rama</strong>. The <em>Ramayana</em> is not just a story—it's a profound guide to life, revealing deep truths through the lives of its iconic characters.</p>
+
+            <p>The journey of <strong>Lord Rama</strong> is a beacon of <strong>righteousness (Dharma)</strong>, teaching us the values of <strong>duty</strong>, <strong>sacrifice</strong>, and the <strong>triumph of good over evil</strong>. As the sage <strong>Vishwamitra</strong> reminds us:</p>
+
+            <blockquote>
+                <p><em>"Dharmena Yuktam Raghukulam Samruddham, Satyam Cha Dharmam Pathikam Balam Cha"</em></p>
+                <p class="x">— The noble lineage of the Raghu dynasty, guided by righteousness, truth, and strength, is a path for all to follow.</p>
+            </blockquote>
+
+            <p>Here, we invite you to embark on an exploration of this sacred journey. With <strong>interactive maps</strong>, <strong>character profiles</strong>, and <strong>quizzes</strong>, engage with the <em>Ramayana</em> like never before. Discover the timeless lessons of <strong>Rama’s exile</strong>, <strong>Sita’s unwavering devotion</strong>, <strong>Hanuman’s boundless loyalty</strong>, and the ultimate <strong>victory of good over evil</strong>. Every corner of this tale holds eternal wisdom, waiting to be uncovered.</p>
+
+            <p>Join us in unveiling the beauty and significance of the <em>Ramayana</em>—where each story is a lesson, every character is a guide, and every verse is a reminder of the <strong>eternal journey towards righteousness</strong>.</p>
+        </section>
+
+        <div class="buttons-container">
+            <button onclick="navigateTo('https://tanisha-srivastava.github.io/mythomapping/Ramayana.html')" class="start-tour">Start Tour</button>
+            <div class="icon-row">
+                <div class="icon-container" onclick="navigateTo('https://surabhi-r05.github.io/Ramayana/profile.html')">
+                    <div class="circle">
+                        <img src="character-icon.jpg" alt="Characters Icon">
+                    </div>
+                    <div class="icon-label">Character Profiles</div>
+                </div>
+                <div class="icon-container quizzes-icon-container" onclick="redirectToQuiz()">
+                    <div class="circle">
+                        <img src="https://img.freepik.com/free-vector/flat-people-asking-questions-illustration_23-2148910627.jpg?semt=ais_hybrid" alt="Quizzes Icon">
+                    </div>
+                    <div class="icon-label">Take Quiz</div>
+                </div>
+            </div>
+
+            <!-- Quiz Dropdown -->
+            <div class="quiz-dropdown-container">
+                <select id="quizDropdown">
+                    <option value="">Select a Kanda For Quiz</option>
+                    <option value="https://surabhi-r05.github.io/Ramayana/trial3.html">Bala Kanda Quiz</option>
+                    <option value="https://surabhi-r05.github.io/Ramayana/ayodhyakanda.html">Ayodhya Kanda Quiz</option>
+                    <option value="https://surabhi-r05.github.io/Ramayana/aranya.html">Aranya Kanda Quiz</option>
+                    <option value="https://surabhi-r05.github.io/Ramayana/kishkinda.html">Kishkindha Kanda Quiz</option>
+                    <option value="https://surabhi-r05.github.io/Ramayana/sundarakand.html">Sundara Kanda Quiz</option>
+                    <option value="https://surabhi-r05.github.io/Ramayana/yuddha.html">Yuddha Kanda Quiz</option>
+                </select>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Mythomapping Project</p>
+    </footer>
+    <script>
+        // Function to navigate to the selected quiz URL
+        function redirectToQuiz() {
+            var quizUrl = document.getElementById('quizDropdown').value;
+            if (quizUrl) {
+                window.location.href = quizUrl;
+            }
+        }
+
+        // Function to navigate to other pages
+        function navigateTo(page) {
+            window.location.href = page;
+        }
+    </script>
+</body>
+</html>
