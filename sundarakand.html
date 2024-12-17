@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sundara Kanda Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://qph.cf2.quoracdn.net/main-qimg-07cea9165e74c2696ae55f9e2b907d5f-lq');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            color: black;
+        }
+        .quiz-container {
+            max-width: 800px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.85);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .options {
+            list-style: none;
+            padding: 0;
+        }
+        .options li {
+            margin: 10px 0;
+        }
+        .option-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: left;
+            transition: background-color 0.3s;
+        }
+        .option-button:hover {
+            background-color: #e0e0e0;
+        }
+        .correct {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .incorrect {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        .disabled {
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Sundara Kanda Quiz</h1>
+
+        <div class="question">
+            <p><strong>1. Who was tasked with finding Sita in Lanka?</strong></p>
+            <ul class="options">
+                <li><button class="option-button" onclick="checkAnswer(this, false, 1)">a) Rama</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, true, 1)">b) Hanuman</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 1)">c) Sugriva</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 1)">d) Lakshmana</button></li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <p><strong>2. What was the name of Ravana’s palace where Sita was kept?</strong></p>
+            <ul class="options">
+                <li><button class="option-button" onclick="checkAnswer(this, false, 2)">a) Lanka Palace</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 2)">b)  Mandodari’s Chamber</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 2)">c) Ravana’s Fort</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, true, 2)">d) Ashoka Vatika</button></li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <p><strong>3. What was the name of the demoness who tried to stop Hanuman from entering Lanka?</strong></p>
+            <ul class="options">
+                <li><button class="option-button" onclick="checkAnswer(this, true, 3)">a) Lankini</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 3)">b) Surpanakha</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 3)">c) Trijata</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 3)">d) Kumbhakarni</button></li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <p><strong>4. What did Sita give to Hanuman as a token of her trust?</strong></p>
+            <ul class="options">
+                <li><button class="option-button" onclick="checkAnswer(this, false, 4)">a) A ring</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 4)">b) A necklace</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 4)">c) A gem</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, true, 4)">d) A chudamani (hair ornament)</button></li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <p><strong>5. How did Hanuman destroy Ravana’s garden in Lanka?</strong></p>
+            <ul class="options">
+                <li><button class="option-button" onclick="checkAnswer(this, false, 5)">a) By setting it on fire</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 5)">b)  By fighting Ravana’s army</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, true, 5)">c) By using his tail to destroy it</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 5)">d) By calling upon the winds</button></li>
+            </ul>
+        </div>
+
+        <h2>Situation-Based Questions</h2>
+
+        <div class="question">
+            <p><strong>1. When faced with a big challenge, like Hanuman crossing the ocean, what is the best way to overcome self-doubt and fear?</strong></p>
+            <ul class="options">
+                <li><button class="option-button" onclick="checkAnswer(this, false, 6)">a)Panic and give up when it feels difficult.</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 6)">b) Wait for someone else to solve the problem for you.</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, true, 6)">c) Focus on past successes and trust your own abilities.</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 6)">d)  Ignore the challenge and hope it will go away.</button></li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <p><strong>2. If you were in a difficult situation, like Sita in captivity, how could a small gesture, like Hanuman’s delivery of a message, provide hope and support?</strong></p>
+            <ul class="options">
+                <li><button class="option-button" onclick="checkAnswer(this, false, 7)">a) It would feel unimportant and wouldn’t really change anything.</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 7)">b) It might just make the situation worse by bringing up more emotions</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 7)">c) It would make me feel like people are just pitying me.</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, true, 7)">d) It can remind you that you’re not alone and that people are there for you.</button></li>
+            </ul>
+        </div>
+
+	<div class="question">
+            <p><strong>3. When you're feeling stuck or trapped, like Hanuman was, what’s the best way to stay calm and find a solution?</strong></p>
+            <ul class="options">
+                <li><button class="option-button" onclick="checkAnswer(this, false, 8)">a)  Panic and try to solve the problem right away.</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 8)">b)  Focus on how bad the situation is and dwell on the stress.</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, true, 8)">c) Stay calm, take a deep breath, and look for the best way to approach the situation with a clear mind.</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 8)">d) Ignore the problem and hope it resolves itself eventually.</button></li>
+            </ul>
+        </div>
+
+
+	<div class="question">
+            <p><strong>4. Just like Hanuman brought hope to Rama and his army by sharing good news about Sita, how can sharing progress or good news with your team help in achieving a common goal?</strong></p>
+            <ul class="options">
+                <li><button class="option-button" onclick="checkAnswer(this, true, 9)">a)  It’s important because it helps keep everyone motivated and focused.</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 9)">b)  It’s best to wait until everything is finished to celebrate.</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 9)">c) It doesn’t matter much, everyone should just do their part.</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 9)">d)  It can make others feel pressured to keep up.</button></li>
+            </ul>
+        </div>
+
+<div class="question">
+            <p><strong>5. If a friend or loved one is going through a difficult time, like Sita was, what’s the best way to offer support?</strong></p>
+            <ul class="options">
+                <li><button class="option-button" onclick="checkAnswer(this, false, 10)">a) Tell them to stay positive, even if the situation doesn’t seem hopeful.</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, true, 10)">b) Offer practical help and specific plans to make them feel more in control.</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 10)">c) Tell them not to worry and that things will get better, even if you don’t know when.</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 10)">d) Avoid talking about their situation to prevent making them feel worse.</button></li>
+            </ul>
+        </div>
+
+
+
+	<div class="question">
+    <div style="text-align: center; margin-bottom: 20px;">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgpWZ0k0w6c6aRHXbvjvIjexRdxvdieFTxvuX2-6oi1oat1neR6z6w35ADhl8q3jjrVCd0KvG81fAqOP32ixAWHiQsuJC2_WTtVDkUj0HUbEuM9IcKQsru7yEw9c7KH5nK3Q3FKQFv5Qhw/s1600/Hanuman-Sita.jpg" alt="Hanuman meeting Sita" style="max-width: 80%; height: auto; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+    </div>
+    <p><strong>When Hanuman met Sita in Ashoka Vatika, what did he suggest to her regarding her escape from Lanka?</strong></p>
+    <ul class="options">
+        <li><button class="option-button" onclick="checkAnswer(this, false, 11)">a) To send a message to Ravana to negotiate her release</button></li>
+        <li><button class="option-button" onclick="checkAnswer(this, true, 11)">b) To wait for Rama’s army to arrive and rescue her</button></li>
+        <li><button class="option-button" onclick="checkAnswer(this, false, 11)">c) To leave with him immediately and return to Rama</button></li>
+        <li><button class="option-button" onclick="checkAnswer(this, false, 11)">d) To surrender to Ravana and avoid further conflict</button></li>
+    </ul>
+</div>
+
+
+    </div>
+
+    <script>
+        function checkAnswer(button, isCorrect, questionNumber) {
+            const buttons = document.querySelectorAll(`.question:nth-of-type(${questionNumber}) .option-button`);
+            buttons.forEach(btn => btn.classList.add('disabled'));
+
+            if (isCorrect) {
+                button.classList.add('correct');
+            } else {
+                button.classList.add('incorrect');
+                const correctButton = Array.from(buttons).find(btn => btn.getAttribute('onclick').includes('true'));
+                if (correctButton) correctButton.classList.add('correct');
+            }
+        }
+    </script>
+</body>
+</html>

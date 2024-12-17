@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayodhya Kanda Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://nowayodhya.com/wp-content/uploads/2020/08/Now-Ayodhya-1.jpeg');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            color: black;
+        }
+        .quiz-container {
+            max-width: 800px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.85);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .options {
+            list-style: none;
+            padding: 0;
+        }
+        .options li {
+            margin: 10px 0;
+        }
+        .option-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: left;
+            transition: background-color 0.3s;
+        }
+        .option-button:hover {
+            background-color: #e0e0e0;
+        }
+        .correct {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .incorrect {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        .disabled {
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Ayodhya Kanda Quiz</h1>
+
+        <div class="question">
+            <p><strong>1. What curse did Dasharatha receive from the sage Shringa?</strong></p>
+            <ul class="options">
+                <li><button class="option-button" onclick="checkAnswer(this, false, 1)">a) To lose his kingdom</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, true, 1)">b) To die without seeing Rama again</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 1)">c) To lose his memory</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 1)">d) To die of grief</button></li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <p><strong>2. Who was sent to bring Rama back from exile?</strong></p>
+            <ul class="options">
+                <li><button class="option-button" onclick="checkAnswer(this, true, 2)">a) Bharata</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 2)">b) Lakshmana</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 2)">c) Sugriva</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 2)">d) Shatrughna</button></li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <p><strong>3. How many years was Rama exiled for?</strong></p>
+            <ul class="options">
+                <li><button class="option-button" onclick="checkAnswer(this, false, 3)">a) 10</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 3)">b) 7</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, true, 3)">c) 14</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 3)">d) 12</button></li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <p><strong>4. How did Dasharatha react to Rama's exile?</strong></p>
+            <ul class="options">
+                <li><button class="option-button" onclick="checkAnswer(this, false, 4)">a) He happily accepted the decision</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, true, 4)">b) He fell into deep sorrow and passed away</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 4)">c) He cursed Kaikeyi for her actions</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 4)">d)  He commanded Bharata to follow Rama</button></li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <p><strong>5. What symbol of kingship did Bharata take from Rama?</strong></p>
+            <ul class="options">
+                <li><button class="option-button" onclick="checkAnswer(this, false, 5)">a) Rama’s bow and arrows</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, true, 5)">b) Rama’s sandals</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 5)">c) A royal crown</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 5)">d)  A sacred necklace</button></li>
+            </ul>
+        </div>
+
+        <h2>Situation-Based Questions</h2>
+
+        <div class="question">
+            <p><strong>1. A close family member asks you to do something you don’t want to do, like how Kaikeyi asked Dasharatha to exile Rama. What would you do?
+</strong></p>
+            <ul class="options">
+                <li><button class="option-button" onclick="checkAnswer(this, false, 6)">a)  Agree reluctantly without questioning</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 6)">b)  Ignore their request and go your own way</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, true, 6)">c) Talk through your concerns with them and find a solution</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 6)">d)  Refuse and tell them they are being unreasonable</button></li>
+            </ul>
+        </div>
+
+      	
+	<div class="question">
+    <div style="text-align: center; margin-bottom: 20px;">
+        <img src="https://m.media-amazon.com/images/I/81t3xgyVl9L.jpg" alt="Rama breaks Shiva's bow" style="max-width: 80%; height: auto; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+    </div>
+    <p><strong>Look at the image of Bharata meeting Rama in the forest, holding Rama’s sandals. Based on the Ayodhya Kanda of the Ramayana, what does Bharata do with Rama’s sandals?</strong></p>
+    <ul class="options">
+        <li><button class="option-button" onclick="checkAnswer(this, false, 7)">a) He keeps them with him as a token of his brother’s presence</button></li>
+        <li><button class="option-button" onclick="checkAnswer(this, false, 7)">b)  He places them at the feet of the family elders for blessings</button></li>
+        <li><button class="option-button" onclick="checkAnswer(this, false, 7)">c) He offers them as part of a prayer for Rama’s safe return</button></li>
+        <li><button class="option-button" onclick="checkAnswer(this, true, 7)">d) He places them on the throne to symbolize Rama’s rule</button></li>
+    </ul>
+</div>
+
+
+    </div>
+
+    <script>
+        function checkAnswer(button, isCorrect, questionNumber) {
+            const buttons = document.querySelectorAll(`.question:nth-of-type(${questionNumber}) .option-button`);
+            buttons.forEach(btn => btn.classList.add('disabled'));
+
+            if (isCorrect) {
+                button.classList.add('correct');
+            } else {
+                button.classList.add('incorrect');
+                const correctButton = Array.from(buttons).find(btn => btn.getAttribute('onclick').includes('true'));
+                if (correctButton) correctButton.classList.add('correct');
+            }
+        }
+    </script>
+</body>
+</html>

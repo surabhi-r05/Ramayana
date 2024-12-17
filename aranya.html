@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aranya Kanda Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://live.staticflickr.com/4820/45640489364_1cf03deaf0_b.jpg');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            color: black;
+        }
+        .quiz-container {
+            max-width: 800px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.85);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .options {
+            list-style: none;
+            padding: 0;
+        }
+        .options li {
+            margin: 10px 0;
+        }
+        .option-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: left;
+            transition: background-color 0.3s;
+        }
+        .option-button:hover {
+            background-color: #e0e0e0;
+        }
+        .correct {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .incorrect {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        .disabled {
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Aranya Kanda Quiz</h1>
+
+        <div class="question">
+            <p><strong>1. Who was the demoness that tried to deceive Rama and Lakshmana by attacking them with illusions?</strong></p>
+            <ul class="options">
+                <li><button class="option-button" onclick="checkAnswer(this, false, 1)">a) Tataka</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, true, 1)">b) Surpanakha</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 1)">c) Lankini</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 1)">d) Mandodari</button></li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <p><strong>2. Which bird tried to rescue Sita from Ravana's chariot?</strong></p>
+            <ul class="options">
+                <li><button class="option-button" onclick="checkAnswer(this, false, 2)">a) Shabala</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 2)">b) Garuda</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 2)">c) Sampati</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, true, 2)">d) Jatayu</button></li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <p><strong>3. What was the name of the forest where Sita was abducted?</strong></p>
+            <ul class="options">
+                <li><button class="option-button" onclick="checkAnswer(this, true, 3)">a) Dandaka Forest</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 3)">b) Chitrakuta Forest</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 3)">c) Panchavati</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 3)">d) Gandhamadana</button></li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <p><strong>4. What was the name of the demon who tried to kill Rama in the form of a golden deer?</strong></p>
+            <ul class="options">
+                <li><button class="option-button" onclick="checkAnswer(this, false, 4)">a) Khara</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, true, 4)">b) Maricha</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 4)">c) Shurpanakha</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 4)">d) Vibhishana</button></li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <p><strong>5. What disguise did Ravana use to kidnap Sita?</strong></p>
+            <ul class="options">
+                <li><button class="option-button" onclick="checkAnswer(this, false, 5)">a) A deer</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 5)">b) A merchant</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, true, 5)">c) A sage</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 5)">d) A farmer</button></li>
+            </ul>
+        </div>
+
+        <h2>Situation-Based Questions</h2>
+
+        <div class="question">
+            <p><strong>1. You’re on a journey to find something important, like Rama searched for Sita. How would you approach this journey?</strong></p>
+            <ul class="options">
+                <li><button class="option-button" onclick="checkAnswer(this, false, 6)">a) Get discouraged if the path is hard</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 6)">b) Follow others and expect them to find it for me</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, true, 6)">c) Stay determined, even if the journey is long and difficult</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 6)">d) Give up after a few failures</button></li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <p><strong>2. You’ve encountered a tough situation where someone you care about is in danger, like how Sita was kidnapped. How would you react</strong></p>
+            <ul class="options">
+                <li><button class="option-button" onclick="checkAnswer(this, false, 7)">a)  Panic and do nothing</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 7)">b) Rely on others to fix the problem</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 7)">c) Leave the situation and forget about it</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, true, 7)">d) Stay calm and think of a strategy to rescue them</button></li>
+            </ul>
+        </div>
+
+	<div class="question">
+            <p><strong>3. Someone is attempting to deceive you, similar to how Ravana used a golden deer to trick Sita. How would you handle this?</strong></p>
+            <ul class="options">
+                <li><button class="option-button" onclick="checkAnswer(this, false, 8)">a) Fall for the trick and ignore any doubts</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 8)">b)  Confront them immediately with anger</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, true, 8)">c) Be cautious and question their motives</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 8)">d) Ignore the situation and walk away</button></li>
+            </ul>
+        </div>
+
+
+	<div class="question">
+            <p><strong>4. You face a betrayal, similar to how Sita was kidnapped under false pretenses. How would you deal with the betrayal?</strong></p>
+            <ul class="options">
+                <li><button class="option-button" onclick="checkAnswer(this, false, 9)">a)  Accept the situation without doing anything</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 9)">b)  Seek revenge immediately</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 9)">c) Blame myself for falling into the trap</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, true, 9)">d) Reflect on the situation and plan a response calmly</button></li>
+            </ul>
+        </div>
+
+	<div class="question">
+            <p><strong>5. You’re facing a loss and need to stay strong, like how Rama dealt with Sita’s abduction. How would you stay focused on your goals?</strong></p>
+            <ul class="options">
+                <li><button class="option-button" onclick="checkAnswer(this, false, 10)">a)    Dwell on the loss and lose focus</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, true, 10)">b) Accept the loss and move forward with determination</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 10)">c)  Ignore the loss and act as if it never happened</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 10)">d) Become angry and resentful</button></li>
+            </ul>
+        </div>
+
+	<div class="question">
+    <div style="text-align: center; margin-bottom: 20px;">
+        <img src="https://indiathedestiny.com/wp-content/uploads/2016/07/Ram-and-Sabri-story-in-hindi-371x410.jpg" alt="Shabari" style="max-width: 80%; height: auto; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+    </div>
+    <p><strong>6. What does Shabari’s act of tasting the fruits before offering them to Lord Rama symbolize?</strong></p>
+    <ul class="options">
+        <li><button class="option-button" onclick="checkAnswer(this, false, 11)">a) The importance of serving perfection to the divine.</button></li>
+        <li><button class="option-button" onclick="checkAnswer(this, false, 11)">b) A test of Lord Rama’s humility and patience.</button></li>
+        <li><button class="option-button" onclick="checkAnswer(this, true, 11)">c) The idea that devotion comes from the heart, not rules.</button></li>
+        <li><button class="option-button" onclick="checkAnswer(this, false, 11)">d) The need to follow strict rituals in worship.</button></li>
+    </ul>
+</div>
+
+
+    </div>
+
+    <script>
+        function checkAnswer(button, isCorrect, questionNumber) {
+            const buttons = document.querySelectorAll(`.question:nth-of-type(${questionNumber}) .option-button`);
+            buttons.forEach(btn => btn.classList.add('disabled'));
+
+            if (isCorrect) {
+                button.classList.add('correct');
+            } else {
+                button.classList.add('incorrect');
+                const correctButton = Array.from(buttons).find(btn => btn.getAttribute('onclick').includes('true'));
+                if (correctButton) correctButton.classList.add('correct');
+            }
+        }
+    </script>
+</body>
+</html>

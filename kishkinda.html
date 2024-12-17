@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kishkinda Kanda Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://64.media.tumblr.com/d557ecd7ab6cb91ff01e831c90fd6aba/tumblr_oldq8eP6ak1ru322to1_r1_1280.jpg');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            color: black;
+        }
+        .quiz-container {
+            max-width: 800px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.85);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .options {
+            list-style: none;
+            padding: 0;
+        }
+        .options li {
+            margin: 10px 0;
+        }
+        .option-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: left;
+            transition: background-color 0.3s;
+        }
+        .option-button:hover {
+            background-color: #e0e0e0;
+        }
+        .correct {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .incorrect {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        .disabled {
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Kishkindha Kanda Quiz</h1>
+
+        <div class="question">
+            <p><strong>1. Who was the king of the monkeys?</strong></p>
+            <ul class="options">
+                <li><button class="option-button" onclick="checkAnswer(this, false, 1)">a) Vali</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, true, 1)">b) Sugriva</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 1)">c) Jambavan</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 1)">d) Angada</button></li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <p><strong>2. Who did Hanuman meet in Lanka before meeting Sita?</strong></p>
+            <ul class="options">
+                <li><button class="option-button" onclick="checkAnswer(this, false, 2)">a) Ravana</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 2)">b) Mandodari</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 2)">c) Indrajit</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, true, 2)">d) Vibhishana</button></li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <p><strong>3. How did Sugriva ensure Rama would recognize Vali during their fight?</strong></p>
+            <ul class="options">
+                <li><button class="option-button" onclick="checkAnswer(this, true, 3)">a) Sugriva wore a garland of flowers.</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 3)">b) Sugriva shouted his name during the battle.</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 3)">c) Rama shot both of them and later identified Sugriva.</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 3)">d) Hanuman helped distinguish Sugriva from Vali.</button></li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <p><strong>4. Why did Hanuman initially forget his ability to fly across the ocean?</strong></p>
+            <ul class="options">
+                <li><button class="option-button" onclick="checkAnswer(this, false, 4)">a) He was afraid of failing the task.</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 4)">b) He chose not to use his powers out of humility.</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 4)">c) He lost his powers due to arrogance.</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, true, 4)">d) He was cursed to forget his powers until reminded.</button></li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <p><strong>5. What convinced Rama that Sugriva was trustworthy?</strong></p>
+            <ul class="options">
+                <li><button class="option-button" onclick="checkAnswer(this, false, 5)">a) Sugriva swore an oath of loyalty.</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 5)">b) Sugriva fought valiantly to defeat Vali.</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, true, 5)">c) Sugriva presented Sita’s ornaments as proof.</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 5)">d) Sugriva offered his kingdom to Rama.</button></li>
+            </ul>
+        </div>
+
+        <h2>Situation-Based Questions</h2>
+
+        <div class="question">
+            <p><strong>1. You’ve been wrongfully accused of betrayal by a close friend, similar to Sugriva being accused by Vali. What do you do?</strong></p>
+            <ul class="options">
+                <li><button class="option-button" onclick="checkAnswer(this, false, 6)">a)Challenge your friend publicly to resolve the misunderstanding.</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 6)">b) Apologize to avoid further conflict, even if you’re not at fault.</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, true, 6)">c) Collect evidence to prove your innocence.</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 6)">d)  Cut ties and let them believe what they want.</button></li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <p><strong>2. A close ally depends on you for crucial help, just as Rama depended on Sugriva to find Sita. However, you get distracted by your own personal gains. How would you handle this situation?</strong></p>
+            <ul class="options">
+                <li><button class="option-button" onclick="checkAnswer(this, false, 7)">a)  Let them find someone else to help</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 7)">b) Avoid confrontation and hope they understand</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 7)">c) Apologize but prioritize your goals first</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, true, 7)">d) Recognize your mistake and refocus on helping them</button></li>
+            </ul>
+        </div>
+
+	<div class="question">
+            <p><strong>3. You’re asked to mediate between two warring siblings, like Hanuman helped Sugriva and Rama connect. How do you approach this?</strong></p>
+            <ul class="options">
+                <li><button class="option-button" onclick="checkAnswer(this, false, 8)">a)  Stay neutral and avoid involvement</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 8)">b)  Encourage both to fight it out and settle things themselves</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, true, 8)">c) Listen to both sides and suggest a fair solution</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 8)">d) Support the one you trust more without hearing the other side</button></li>
+            </ul>
+        </div>
+
+
+	<div class="question">
+            <p><strong>4. You’ve finally reclaimed something important from a rival, just as Sugriva regained his throne from Vali. A friend reminds you of a promise you made to help them next. How do you handle this?</strong></p>
+            <ul class="options">
+                <li><button class="option-button" onclick="checkAnswer(this, true, 9)">a)  Explain your situation and ask for more time.</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 9)">b)  Fulfill the promise right away, despite your exhaustion.</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 9)">c) Delay helping them, hoping they’ll forget.</button></li>
+                <li><button class="option-button" onclick="checkAnswer(this, false, 9)">d)  Focus on celebrating your victory before helping them.</button></li>
+            </ul>
+        </div>
+
+
+	<div class="question">
+    <div style="text-align: center; margin-bottom: 20px;">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQTJjY9kSJY5i7GraP6eTZd9gi0IphkZeQBA&s" alt="Vali and sugriva" style="max-width: 80%; height: auto; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+    </div>
+    <p><strong>Why did Rama shoot Vali from hiding during his duel with Sugriva?</strong></p>
+    <ul class="options">
+        <li><button class="option-button" onclick="checkAnswer(this, false, 10)">a) Because Sugriva asked Rama to remain hidden during the fight</button></li>
+        <li><button class="option-button" onclick="checkAnswer(this, true, 10)">b) Because Vali’s boon made him undefeatable in direct combat.</button></li>
+        <li><button class="option-button" onclick="checkAnswer(this, false, 10)">c) Because it was a strategic move to fulfill his promise to Sugriva</button></li>
+        <li><button class="option-button" onclick="checkAnswer(this, false, 10)">d) Because Vali had insulted Rama earlier</button></li>
+    </ul>
+</div>
+
+
+    </div>
+
+    <script>
+        function checkAnswer(button, isCorrect, questionNumber) {
+            const buttons = document.querySelectorAll(`.question:nth-of-type(${questionNumber}) .option-button`);
+            buttons.forEach(btn => btn.classList.add('disabled'));
+
+            if (isCorrect) {
+                button.classList.add('correct');
+            } else {
+                button.classList.add('incorrect');
+                const correctButton = Array.from(buttons).find(btn => btn.getAttribute('onclick').includes('true'));
+                if (correctButton) correctButton.classList.add('correct');
+            }
+        }
+    </script>
+</body>
+</html>
